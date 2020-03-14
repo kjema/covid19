@@ -1,6 +1,6 @@
 import React, { useState, SyntheticEvent } from 'react';
 import { Dropdown, Select } from 'semantic-ui-react';
-import useStats from '../utils/useStats';
+import { useStats } from '../utils/useStats';
 import { Stats } from './Stats';
 
 interface Props {}
@@ -12,9 +12,9 @@ export const CountrySelector: React.FC<Props> = () => {
   const [selectedCountry, setSelectedCountry] = useState('Sweden');
 
   const countryOptions = (countries: any) => {
-    return Object.entries<string>(countries).map(([country, code]) => {
+    return Object.entries<string>(countries).map(([country, code], index) => {
       return {
-        key: code,
+        key: code + index,
         value: country,
         text: country
       };

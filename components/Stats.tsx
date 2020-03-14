@@ -1,6 +1,6 @@
 import React from 'react';
 import { Message, Loader, Dimmer } from 'semantic-ui-react';
-import useStats from '../utils/useStats';
+import { useStats } from '../utils/useStats';
 
 interface Props {
   title?: string;
