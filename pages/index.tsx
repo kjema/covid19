@@ -13,8 +13,7 @@ const Home: NextPage<Props> = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main>
-      {/* <h2>Total</h2> */}
-      <Stats title="Worldwide" url="https://covid19.mathdro.id/api"></Stats>
+      <Stats title="Covid-19 Worldwide" url="https://covid19.mathdro.id/api"></Stats>
       <CountrySelector />
     </main>
     <style jsx>{`
