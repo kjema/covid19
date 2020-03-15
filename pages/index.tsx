@@ -12,41 +12,11 @@ const Home: NextPage<Props> = () => (
       <title>COVID-19 Stats</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <main>
-      <Stats
-        title="Covid-19 Worldwide"
-        url="https://covid19.mathdro.id/api"
-      ></Stats>
-      <CountrySelector />
-    </main>
-    <footer>
-      <div className="spacer"></div>
-      <p className="small">
-        Data sources from
-        <a
-          href="https://github.com/mathdroid/covid-19-api"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {' '}
-          Muhammad Mustadi's
-        </a>{' '}
-        API
-      </p>
-      <div className="spacer"></div>
-    </footer>
-    <style jsx>{`
-      .main {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        min-width: 1px;
-        max-width: 100%;
-        flex: 1;
-        justify-content: center;
-        align-items: center;
-      }
-    `}</style>
+    <Stats
+      title="Covid-19 Worldwide"
+      url="https://covid19.mathdro.id/api"
+    ></Stats>
+    <CountrySelector />
   </div>
 );
 

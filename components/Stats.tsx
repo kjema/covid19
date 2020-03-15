@@ -1,5 +1,6 @@
 import React from 'react';
 import { Message, Loader, Dimmer } from 'semantic-ui-react';
+import useDarkMode from 'use-dark-mode';
 import { useStats } from '../utils/useStats';
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 
 export const Stats: React.FC<Props> = props => {
   const { stats, loading, error } = useStats(props.url);
+  const darkMode = useDarkMode(false);
 
   const handleError = () => {
     return (
@@ -41,8 +43,8 @@ export const Stats: React.FC<Props> = props => {
         <div className="statistics">
           <div className="stats">
             {loading && (
-              <Dimmer active inverted>
-                <Loader>Loading</Loader>
+              <Dimmer active inverted={!darkMode.value}>
+                <Loader></Loader>
               </Dimmer>
             )}
             <div className="stats-item">
@@ -78,7 +80,7 @@ export const Stats: React.FC<Props> = props => {
           justify-content: center;
           align-items: center;
 
-          margin-top: calc(64pt - 1px);
+          margin-top: var(--page-margin);
         }
 
         .statistics {
@@ -112,13 +114,13 @@ export const Stats: React.FC<Props> = props => {
           line-height: 1.14em;
           letter-spacing: -0.05em;
           font-weight: bold;
-          color: #000000;
+          color: var(--foreground);
         }
 
         .label {
           font-size: 0.875rem;
           font-weight: 600;
-          color: #666666;
+          color: var(--accents-1);
           letter-spacing: 0.1em;
           text-transform: uppercase;
           text-align: center;
@@ -135,6 +137,10 @@ export const Stats: React.FC<Props> = props => {
             padding: 0;
             border: none;
           }
+        }
+
+        @media (max-width: 600px) {
+          .stats-container: margin-top: var(--page-margin-m);
         }
       `}</style>
     </div>
