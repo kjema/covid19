@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from 'semantic-ui-react';
 
 interface Props {
   children?: React.ReactNode;
@@ -34,8 +33,26 @@ const Layout: React.FC<Props> = props => {
           margin: 0;
           line-height: 1.1em;
           letter-spacing: -0.049375rem;
-          font-size: 3.5rem;
+          --size: 3.5rem;
+          --size-t: 3rem;
+          --size-m: 2rem;
+          font-size: var(--size);
           font-weight: 700;
+          text-transform: none;
+        }
+
+        h5 {
+          color: #666666;
+          text-align: center;
+          margin: 16pt 0;
+          font-weight: 600;
+          line-height: 1.41em;
+          letter-spacing: -0.01125rem;
+          --size: 1.5rem;
+          --size-t: 1.25rem;
+          --size-m: 1rem;
+          font-size: var(--size);
+          font-weight: 400;
           text-transform: none;
         }
 
@@ -53,11 +70,11 @@ const Layout: React.FC<Props> = props => {
 
         @media (max-width: 960px) {
           h2 {
-            font-size: 3rem;
+            font-size: var(--size-t);
           }
 
-          .ui.search.selection.dropdown {
-            // font-size: 1.5rem;
+          h5 {
+            font-size: var(--size-t);
           }
 
           .spacer {
@@ -66,11 +83,15 @@ const Layout: React.FC<Props> = props => {
         }
         @media (max-width: 600px) {
           h2 {
-            font-size: 2rem;
+            font-size: var(--size-m);
+          }
+
+          h5 {
+            font-size: var(--size-m);
           }
 
           .ui.search.selection.dropdown {
-            // font-size: 1.25rem;
+            font-size: 1rem;
           }
         }
       `}</style>

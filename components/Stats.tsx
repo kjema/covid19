@@ -19,10 +19,21 @@ export const Stats: React.FC<Props> = props => {
     );
   };
 
+  const formatDate = (date: number) => {
+    return new Intl.DateTimeFormat('en-GB', {
+      year: 'numeric',
+      month: 'long',
+      day: '2-digit',
+      hour: 'numeric',
+      minute: 'numeric'
+    }).format(date);
+  };
+
   return (
     <div className="stats-container">
       {props.title && <h2>{props.title}</h2>}
       {props.children}
+      <h5>{stats?.lastUpdate && formatDate(Date.parse(stats?.lastUpdate))}</h5>
       <div className="spacer"></div>
       {error ? (
         handleError()
@@ -50,7 +61,7 @@ export const Stats: React.FC<Props> = props => {
               <div className="value">
                 {stats?.deaths?.value.toLocaleString()}
               </div>
-              <div className="label">Deaths</div>
+              <div className="label">Deceased</div>
             </div>
           </div>
         </div>
