@@ -1,5 +1,5 @@
 import React, { useState, SyntheticEvent } from 'react';
-import { Dropdown, Select } from 'semantic-ui-react';
+import { Dropdown } from 'semantic-ui-react';
 import { useStats } from '../utils/useStats';
 import { Stats } from './Stats';
 

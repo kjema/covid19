@@ -9,12 +9,12 @@ interface Props {}
 const Home: NextPage<Props> = () => (
   <div>
     <Head>
-      <title>Create Next App</title>
+      <title>COVID-19 Stats</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main>
       {/* <h2>Total</h2> */}
-      <Stats title="Total" url="https://covid19.mathdro.id/api"></Stats>
+      <Stats title="Worldwide" url="https://covid19.mathdro.id/api"></Stats>
       <CountrySelector />
     </main>
     <style jsx>{`
