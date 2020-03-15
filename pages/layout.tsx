@@ -56,6 +56,17 @@ const Layout: React.FC<Props> = props => {
           text-transform: none;
         }
 
+        .small {
+          color: #666666;
+          text-align: center;
+          margin: 0;
+          font-family: var(--font-sans);
+          --size: 1rem;
+          line-height: 1.5em;
+          font-size: var(--size);
+          text-transform: none;
+        }
+
         .ui.search.selection.dropdown {
           font-size: 1.25rem;
         }
