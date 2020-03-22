@@ -15,7 +15,6 @@ const Layout: React.FC<Props> = props => {
       </header>
       <main>{props.children}</main>
       <footer>
-        <span>Made with ❤️ by Marcus Kjell</span>
         <span>
           Data API provided by
           <a
